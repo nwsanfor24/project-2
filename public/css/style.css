@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins|Titan+One&display=swap");
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Titan One", cursive;
+  font-weight: normal;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.my-nav {
+  background-color: #ffffff;
+}
+.my-nav .brand-logo {
+  color: #D78521;
+  font-family: "Titan One", cursive;
+}
+.my-nav .brand-logo img {
+  max-height: 35px;
+  padding-right: 15px;
+}
+@media screen and (min-width: 992px) {
+  .my-nav {
+    height: 105px;
+  }
+  .my-nav .brand-logo {
+    padding-top: 15px;
+    font-size: 42px;
+    color: #D78521;
+  }
+  .my-nav .brand-logo img {
+    max-height: 45px;
+  }
+}
+
+.my-header {
+  background-image: url("../images/burger_background.png");
+  /* Background vector created by freepik - www.freepik.com */
+  background-repeat: repeat;
+  color: #ffffff;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.45);
+}
+.my-header input {
+  font-weight: bold;
+}
+.my-header .input-field input[type=text]:focus {
+  border-bottom: 1px solid #ffffff;
+  box-shadow: 0 1px 0 0 #ffffff;
+}
+
+.btn {
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
+
+.btn-delete {
+  background-color: #000000;
+}
+
+footer, .page-footer {
+  min-height: 45px;
+  background-image: url("../images/burger_background.png");
+  /* Background vector created by freepik - www.freepik.com */
+  background-repeat: repeat;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.45);
+}
+
+td {
+  padding: 15px;
+}
+
+table {
+  border: 1px solid #F8F8F8;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */
