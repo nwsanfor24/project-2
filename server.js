@@ -7,7 +7,7 @@ const exphbs = require("express-handlebars");
 
 // For Express Routes
 const basehtml = require("./routes/html-routes");
-const apiroutes = require("./routes/api-routes");
+//const apiroutes = require("./routes/api-routes");
 
 // Express App
 const app = express();
@@ -32,7 +32,7 @@ app.set("view engine", "handlebars");
 // ---------------------------------------------------------------------------
 
 app.use("/", basehtml);
-app.use("/api", apiroutes);
+//app.use("/api", apiroutes);
 
 // Connects to database then starts the server
 // ---------------------------------------------------------------------------
