@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
 // Getting sequelize for database
@@ -17,13 +17,12 @@ router.get("/", function(req, res) {
   db.Burger.findAll({
     attributes: ["id", "name", "eaten"],
     raw: true,
-    order: [['updatedAt', 'DESC']]
-  })
-  .then(function(dbBurger) {
+    order: [["updatedAt", "DESC"]]
+  }).then(function(dbBurger) {
 
     const hamburgers = {
       hamburger: dbBurger
-    }
+    };
 
     res.render("index", hamburgers);
 
