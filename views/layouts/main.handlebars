@@ -14,12 +14,12 @@
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="UTF-8">
-  <title>Burger Builder</title>
+  <title>Project 2</title>
 </head>
 
 <body>
 
-  <header>
+  {{!-- <header>
     <nav class="my-nav">
       <div class="nav-wrapper">
 
@@ -30,11 +30,9 @@
         </a>
       </div>
     </nav>
-  </header>
+  </header> --}}
 
   {{{ body }}}
-
-  <footer class="page-footer"></footer>
 
   <!-- JavaScript -->
   <script type="text/javascript" src="./js/materialize.min.js"></script>
@@ -49,8 +47,8 @@
       el: "#birds",
       mouseControls: true,
       touchControls: true,
-      minHeight: 200.00,
-      minWidth: 200.00,
+      minHeight: 500.00,
+      minWidth: 500.00,
       scale: 1.00,
       scaleMobile: 1.00,
       backgroundColor: 0x7192f,
@@ -64,6 +62,16 @@
       separation: 20,
       alignment: 20,
       cohesion: 20
+    });
+
+    VANTA.WAVES({
+      el: "#waves",
+      mouseControls: true,
+      touchControls: true,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00
     });
   </script>
 

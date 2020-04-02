@@ -1,30 +1,30 @@
 <main>
-  <div class="my-header">
-      <div class="container">
-        <div id="birds">
-          
-        </div>
-      </div> 
-  </div>
-  <div class="container">
+
+  
+    <div id="birds">
+      <h2 class="white-text">Give me a Damn Break</h2>
+    </div>
+
+  {{!-- <div class="container">
     <div class="row">
       <div class="col s12 m6">
         <div>
           <h2>Eat a Burger</h2>
           <table class="striped">
             <tbody class="uneaten-burger">
-            {{#each hamburger}}
+              {{#each hamburger}}
 
-              
+
               {{#unless eaten}}
-                <tr>
-                    <td>{{name}}</td>
-                    <td class="right-align">
-                      <a class="waves-effect waves-light btn btn-eat" data-id="{{id}}" data-name="{{name}}" data-eaten="{{eaten}}">Eat!</a>
-                    </td>
-                </tr>            
+              <tr>
+                <td>{{name}}</td>
+                <td class="right-align">
+                  <a class="waves-effect waves-light btn btn-eat" data-id="{{id}}" data-name="{{name}}"
+                    data-eaten="{{eaten}}">Eat!</a>
+                </td>
+              </tr>
               {{/unless}}
-            {{/each}}
+              {{/each}}
             </tbody>
           </table>
         </div>
@@ -34,22 +34,22 @@
           <h2>Eaten Burgers</h2>
           <table class="striped">
             <tbody class="eaten-burger">
-            {{#each hamburger}}
+              {{#each hamburger}}
               {{#if eaten}}
-                <tr>
-                    <td>{{name}}</td>
-                    <td class="right-align">
-                      <a class="waves-effect waves-light btn btn-delete" data-id="{{id}}" data-name="{{name}}" data-eaten="{{eaten}}">Delete</a>
-                    </td>
-                </tr>            
+              <tr>
+                <td>{{name}}</td>
+                <td class="right-align">
+                  <a class="waves-effect waves-light btn btn-delete" data-id="{{id}}" data-name="{{name}}"
+                    data-eaten="{{eaten}}">Delete</a>
+                </td>
+              </tr>
               {{/if}}
-            {{/each}}
+              {{/each}}
             </tbody>
           </table>
         </div>
       </div>
-    </div>  
-  </div>
- 
-</main>
+    </div>
+  </div> --}}
 
+</main>
