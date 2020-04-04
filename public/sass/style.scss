@@ -24,7 +24,7 @@ $primary-shadow: inset 0 0 10px rgba(0,0,0,0.45);
 }
 body {
     display: flex;
-    min-height: 100vh;
+    min-height: 300vh;
     flex-direction: column;
     font-family: $primary-font;
     font-size: 16px;
@@ -75,7 +75,7 @@ main {
 }
 
 .my-header {
-  background-image: url("../images/burger_background.png");
+  // background-image: url("../images/burger_background.png");
   /* Background vector created by freepik - www.freepik.com */  
   background-repeat: repeat;
   color: $white-color;
@@ -129,8 +129,6 @@ table {
   background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
   width: 100%;
   height:100vh;
-  
- 
 }
 
 .circles{

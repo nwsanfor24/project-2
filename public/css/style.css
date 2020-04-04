@@ -6,7 +6,7 @@
 
 body {
   display: flex;
-  min-height: 100vh;
+  min-height: 300vh;
   flex-direction: column;
   font-family: "Poppins", sans-serif;
   font-size: 16px;
@@ -47,7 +47,6 @@ main {
 }
 
 .my-header {
-  background-image: url("../images/burger_background.png");
   /* Background vector created by freepik - www.freepik.com */
   background-repeat: repeat;
   color: #ffffff;
