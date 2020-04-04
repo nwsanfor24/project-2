@@ -7,7 +7,7 @@ const exphbs = require("express-handlebars");
 
 // For Express Routes
 const basehtml = require("./routes/html-routes");
-// const apiroutes = require("./routes/api-routes");
+const pexels = require("./routes/api-pexels-routes");
 
 // Express App
 const app = express();
@@ -32,6 +32,7 @@ app.set("view engine", "handlebars");
 // ---------------------------------------------------------------------------
 
 app.use("/", basehtml);
+app.use("/pexels", pexels);
 
 //app.use("/api", apiroutes);
 
