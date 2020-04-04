@@ -1,30 +1,50 @@
 <main>
-  <div class="my-header">
-      <div class="container">
-        <div id="birds">
-          
-        </div>
-      </div> 
-  </div>
+
+<div id="birds">
+  
+</div>
   <div class="container">
+      <div class="grid-container" id="card">
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+                <span class="card-title">Card Title</span>
+                <p>I am a very simple card. I am good at containing small bits of information.
+                  I am convenient because I require little markup to use effectively.</p>
+              </div>
+              <div class="card-action">
+                <a href="#">This is a link</a>
+                <a href="#">This is a link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+
+  {{!-- <div class="container">
     <div class="row">
       <div class="col s12 m6">
         <div>
           <h2>Eat a Burger</h2>
           <table class="striped">
             <tbody class="uneaten-burger">
-            {{#each hamburger}}
+              {{#each hamburger}}
 
-              
+
               {{#unless eaten}}
-                <tr>
-                    <td>{{name}}</td>
-                    <td class="right-align">
-                      <a class="waves-effect waves-light btn btn-eat" data-id="{{id}}" data-name="{{name}}" data-eaten="{{eaten}}">Eat!</a>
-                    </td>
-                </tr>            
+              <tr>
+                <td>{{name}}</td>
+                <td class="right-align">
+                  <a class="waves-effect waves-light btn btn-eat" data-id="{{id}}" data-name="{{name}}"
+                    data-eaten="{{eaten}}">Eat!</a>
+                </td>
+              </tr>
               {{/unless}}
-            {{/each}}
+              {{/each}}
             </tbody>
           </table>
         </div>
@@ -34,22 +54,22 @@
           <h2>Eaten Burgers</h2>
           <table class="striped">
             <tbody class="eaten-burger">
-            {{#each hamburger}}
+              {{#each hamburger}}
               {{#if eaten}}
-                <tr>
-                    <td>{{name}}</td>
-                    <td class="right-align">
-                      <a class="waves-effect waves-light btn btn-delete" data-id="{{id}}" data-name="{{name}}" data-eaten="{{eaten}}">Delete</a>
-                    </td>
-                </tr>            
+              <tr>
+                <td>{{name}}</td>
+                <td class="right-align">
+                  <a class="waves-effect waves-light btn btn-delete" data-id="{{id}}" data-name="{{name}}"
+                    data-eaten="{{eaten}}">Delete</a>
+                </td>
+              </tr>
               {{/if}}
-            {{/each}}
+              {{/each}}
             </tbody>
           </table>
         </div>
       </div>
-    </div>  
-  </div>
- 
-</main>
+    </div>
+  </div> --}}
 
+</main>
