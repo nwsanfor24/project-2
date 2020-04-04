@@ -32,7 +32,8 @@ app.set("view engine", "handlebars");
 // ---------------------------------------------------------------------------
 
 app.use("/", basehtml);
-// app.use("/api", apiroutes);
+
+//app.use("/api", apiroutes);
 
 // Connects to database then starts the server
 // ---------------------------------------------------------------------------

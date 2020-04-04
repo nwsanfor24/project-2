@@ -2,7 +2,7 @@
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
 // Getting sequelize for database
@@ -12,62 +12,59 @@ const db = require("../models");
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 
-// Create new burger
-router.post("/burgers", function(req, res) {
+// Get music data from spotify api
+router.get("/music", function(req, res) {
 
-    db.Burger.create({
-        name: req.body.name,
-        eaten: false
-    })
+  db.Burger.create({
+    name: req.body.name,
+    eaten: false
+  })
     .then(function(dbBurger) {
 
-        res.json(dbBurger);
+      res.json(dbBurger);
 
     }).catch(function(error) {
 
-        console.error(error);
-    
+      console.error(error);
     });
 
 });
 
 router.put("/burgers/:id", function(req, res) {
-    db.Burger.update(
-        {
-            eaten: true
-        },
-        {
-            where: {
-                id: req.params.id
-            }
-        }
-    ).then(function() {
+  db.Burger.update(
+    {
+      eaten: true
+    },
+    {
+      where: {
+        id: req.params.id
+      }
+    }
+  ).then(function() {
 
-        res.sendStatus(200);
-    
-    }).catch(function(error) {
+    res.sendStatus(200);
+  }).catch(function(error) {
 
-        console.error(error);
+    console.error(error);
 
-    });
+  });
 });
 
 router.delete("/burgers/:id", function(req, res) {
-    db.Burger.destroy(
-        {
-            where: {
-                id: req.params.id
-            }
-        }
-    ).then(function(dbBurger) {
+  db.Burger.destroy(
+    {
+      where: {
+        id: req.params.id
+      }
+    }
+  ).then(function() {
 
-        res.sendStatus(200);
-    
-    }).catch(function(error) {
+    res.sendStatus(200);
+  }).catch(function(error) {
 
-        console.error(error);
+    console.error(error);
 
-    });
+  });
 });
 
 
