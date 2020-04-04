@@ -23,7 +23,7 @@ app.use(session(sess));
 
 //Configure Passport with the application settings
 //////////////////////////////////////////////////////////////////////
-// Load environment variables from .env
+// Load environment constiables from .env
 const dotenv = require("dotenv");
 dotenv.config();
 // Load Passport
@@ -58,4 +58,18 @@ passport.serializeUser(function (user, done) {
 passport.deserializeUser(function (user, done) {
   done(null, user);
 });
+//////////////////////////////////////////////////////////////////////
+
+
+//Including the routers and userInViews middleware
+//////////////////////////////////////////////////////////////////////
+const userInViews = require("./lib/middleware/userInViews");
+const authRouter = require("./routes/auth");
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
+
+app.use(userInViews());
+app.use("/", authRouter);
+app.use("/", indexRouter);
+app.use("/", usersRouter);
 //////////////////////////////////////////////////////////////////////
