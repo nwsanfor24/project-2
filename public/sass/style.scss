@@ -39,58 +39,58 @@ main {
     flex: 1 0 auto;
 }
 
-.my-nav {
-  background-color: $white-color;
+// .my-nav {
+//   background-color: $white-color;
 
-  .brand-logo {
+//   .brand-logo {
 
-    color: $secondary-color;
+//     color: $secondary-color;
 
-    font-family: $secondary-font;
+//     font-family: $secondary-font;
 
-    img {
-      max-height: 35px;
-      padding-right: 15px;
-    }
+//     img {
+//       max-height: 35px;
+//       padding-right: 15px;
+//     }
 
-  }
+//   }
 
-  @media screen and (min-width: 992px) {
+//   @media screen and (min-width: 992px) {
 
     
-    height: 105px;
+//     height: 105px;
 
-    .brand-logo {
+//     .brand-logo {
 
-      padding-top: 15px;
-      font-size: 42px;
-      color: $secondary-color;
+//       padding-top: 15px;
+//       font-size: 42px;
+//       color: $secondary-color;
         
-      img {
-        max-height: 45px;
-      }
+//       img {
+//         max-height: 45px;
+//       }
         
-    }
-  }
-}
+//     }
+//   }
+// }
 
-.my-header {
-  // background-image: url("../images/burger_background.png");
-  /* Background vector created by freepik - www.freepik.com */  
-  background-repeat: repeat;
-  color: $white-color;
-  box-shadow: $primary-shadow; 
+// .my-header {
+//   // background-image: url("../images/burger_background.png");
+//   /* Background vector created by freepik - www.freepik.com */  
+//   background-repeat: repeat;
+//   color: $white-color;
+//   box-shadow: $primary-shadow; 
 
-  input {
-    font-weight: bold;
-  }
+//   input {
+//     font-weight: bold;
+//   }
 
-  .input-field input[type=text]:focus {
-    border-bottom: 1px solid $white-color;
-    box-shadow: 0 1px 0 0 $white-color;
-  }
+//   .input-field input[type=text]:focus {
+//     border-bottom: 1px solid $white-color;
+//     box-shadow: 0 1px 0 0 $white-color;
+//   }
 
-}
+// }
 
 .btn {
   font-weight: bold;
@@ -109,14 +109,14 @@ footer, .page-footer {
   box-shadow: $primary-shadow;
 }
 
-td {
-  padding: 15px;
-}
+// td {
+//   padding: 15px;
+// }
 
-table {
-  border: 1px solid $gray-color-light;
-  border-radius: 5px;
-}
+// table {
+//   border: 1px solid $gray-color-light;
+//   border-radius: 5px;
+// }
 
 #birds {
   position: relative;
@@ -128,9 +128,7 @@ table {
   background: #4e54c8;  
   background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
   width: 100%;
-  height:100vh;
-  
- 
+  height: 100vh;
 }
 
 .circles{
