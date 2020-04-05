@@ -118,6 +118,10 @@ footer, .page-footer {
 //   border-radius: 5px;
 // }
 
+#row {
+  display: flex;
+}
+
 #birds {
   position: relative;
   min-height: 500px;
