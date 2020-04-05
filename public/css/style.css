@@ -32,6 +32,7 @@ main {
 
 footer, .page-footer {
   min-height: 45px;
+  background: #07acf8;
   background-repeat: repeat;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.45);
 }
