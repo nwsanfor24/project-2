@@ -126,6 +126,27 @@ footer, .page-footer {
   margin-bottom: -30px;
 }
 
+#waves {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  margin-bottom: -30px;
+}
+
+#topology {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  margin-bottom: -30px;
+}
+
+#dots {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  margin-bottom: -30px;
+}
+
 .card {
   flex-direction: row;
   z-index: 2;
