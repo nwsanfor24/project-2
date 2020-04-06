@@ -24,8 +24,8 @@ router.get("/meditation", function(req, res) {
   res.render("meditation", { title: "Meditate" });
 });
 
-router.get("/art", function(req, res) {
-  res.render("art", { title: "Art" });
-});
+// router.get("/art", function(req, res) {
+//   res.render("art", { title: "Art" });
+// });
 
 module.exports = router;
