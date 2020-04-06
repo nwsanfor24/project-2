@@ -1,5 +1,24 @@
 <main>
 
+  <div class="row">
+    {{#each photo}}
+      <div class="col s12 m4">
+        <div class="card large">
+          <div class="card-image">
+            <img src="{{src.landscape}}">
+          </div>
+          <div class="card-content">
+            <p>By {{photographer}}</p>
+          </div>
+          <div class="card-action">
+            <a href="#" class="favorite"><i class="material-icons">favorite_border</i></a>
+            <a href="{{url}}" target="_blank"><i class="material-icons">launch</i></a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
     <div class="row">
         <div id="topology">
             <div class="container">
