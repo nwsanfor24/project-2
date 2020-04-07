@@ -97,9 +97,9 @@ $( document ).ready(function() {
 
   // Adding Burger
 
-  $submit.on(`click`, (event)=> {
+  $submit.on("click", (event)=> {
     event.preventDefault();
-    const burgerField = $(`#burger_name`);
+    const burgerField = $("#burger_name");
     const burgerName = burgerField.val().trim();
     const burgerNameLen = burgerName.length;
     if (burgerNameLen < 1 || burgerNameLen > 128) {
