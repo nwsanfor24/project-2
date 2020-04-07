@@ -32,7 +32,7 @@ app.set("view engine", "handlebars");
 // Routes
 // ---------------------------------------------------------------------------
 app.use("/", basehtml);
-app.use("/pexels", pexels);
+app.use("/art", pexels);
 
 
 //app.use("/api", apiroutes);

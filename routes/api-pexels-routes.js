@@ -20,7 +20,13 @@ router.get("/", function(req, res) {
     url: "https://api.pexels.com/v1/curated?per_page=15&page=1",
     headers: {"Authorization":process.env.PEXELS_API}
   }).then(function(response) {
-    console.log(response.data);
+
+    const pexelImages = {
+      photo: response.data.photos
+    };
+
+    res.render("art", pexelImages);
+
   }).catch(function(error) {
     console.log(error);
   });
