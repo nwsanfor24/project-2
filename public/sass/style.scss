@@ -128,21 +128,16 @@ footer, .page-footer {
 
 #waves {
   position: relative;
-  min-height: 500px;
+  width: 100%;
+  height: 100vh;
   display: flex;
   margin-bottom: -30px;
 }
 
 #topology {
   position: relative;
-  min-height: 500px;
-  display: flex;
-  margin-bottom: -30px;
-}
-
-#dots {
-  position: relative;
-  min-height: 500px;
+  width: 100%;
+  height: 100vh;
   display: flex;
   margin-bottom: -30px;
 }

@@ -1,28 +1,45 @@
 <main>
 
-  <div class="row">
-    {{#each photo}}
-      <div class="col s12 m4">
-        <div class="card large">
-          <div class="card-image">
-            <img src="{{src.landscape}}">
-          </div>
-          <div class="card-content">
-            <p>By {{photographer}}</p>
-          </div>
-          <div class="card-action">
-            <a href="#" class="favorite"><i class="material-icons">favorite_border</i></a>
-            <a href="{{url}}" target="_blank"><i class="material-icons">launch</i></a>
-          </div>
-        </div>
-      </div>
-    {{/each}}
-  </div>
-
     <div class="row">
-        <div id="dots">
-            
+        {{#each photo}}
+        <div class="container">
+            <div class="col s12 m4">
+                <div class="card large">
+                    <div class="card-image">
+                        <img src="{{src.landscape}}">
+                    </div>
+                    <div class="card-content black-text">
+                        <p>By {{photographer}}</p>
+                    </div>
+                    <div class="card-action black-text">
+                        <a href="#" class="favorite"><i class="material-icons">favorite_border</i></a>
+                        <a href="{{url}}" target="_blank"><i class="material-icons">launch</i></a>
+                    </div>
+                </div>
+            </div>
         </div>
+        {{/each}}
     </div>
+
+    {{!-- <div class="row">
+        <div id="topology">
+            <div class="container">
+                <div class="col s12 m4 l3">
+                    <h2 class="white-text">This is Content</h2>
+                    <h3 class="white-text">More content</h3>
+                    <h4 class="white-text">Even more content</h4>
+                </div>
+                <div class="col s12 m8 l9">
+                    <div class="card large transparent">
+                        <div class="card-content white-text">
+                            <p>This is the content on the card</p>
+                            <p>This is more content on the card</p>
+                            <p>I'm thinking this content will populate once something is clicked?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> --}}
 
 </main>
