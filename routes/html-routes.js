@@ -23,7 +23,7 @@ router.get("/home", function(req, res) {
   res.render("index", { title: "Give Me A Break!" });
 });
 
-router.get("/music", secured(), function(req, res) {
+router.get("/music", function(req, res) {
   res.render("music", { title: "Music to soothe your soul"});
 });
 
