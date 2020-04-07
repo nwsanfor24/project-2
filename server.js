@@ -10,6 +10,8 @@ const basehtml = require("./routes/html-routes");
 const pexels = require("./routes/api-pexels-routes");
 const authRoute = require("./routes/auth");
 const usersRoute = require("./routes/users");
+const spotify = require("./routes/api-spotify-routes");
+
 
 // Express App
 const app = express();
@@ -33,6 +35,7 @@ app.set("view engine", "handlebars");
 // ---------------------------------------------------------------------------
 app.use("/", basehtml);
 app.use("/art", pexels);
+app.use("/spotify", spotify);
 
 
 //app.use("/api", apiroutes);
