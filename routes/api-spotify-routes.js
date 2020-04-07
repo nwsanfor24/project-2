@@ -55,14 +55,14 @@ router.get("/", function(req, res) {
   }).then(function(response) {
     return axios({
       method: "get",
-      url: "https://accounts.spotify.com/api/v1/search/q=relaxation&type=track",
+      url: "https://accounts.spotify.com/api/v1/search/q=meditation&type=track",
       headers: {"Authorization: Bearer ":response.data.access_token},
     }).then(function(response) {
       const meditationMusic = {
         meditate: response.data
       };
 
-      res.render("music", meditationMusic);
+      res.render("meditation", meditationMusic);
 
     }).catch(function(error) {
       console.log(error);
