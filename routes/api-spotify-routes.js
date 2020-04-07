@@ -4,69 +4,72 @@
 
 const express = require("express");
 const router = express.Router();
+const axios = require("axios");
 
-// Getting sequelize for database
-const db = require("../models");
 
 // Routes
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 
-// Get music data from spotify api
-router.get("/music", function(req, res) {
+// Pull relaxation music from Spotify
 
-  db.Burger.create({
-    name: req.body.name,
-    eaten: false
-  })
-    .then(function(dbBurger) {
+router.get("/", function(req, res) {
 
-      res.json(dbBurger);
+  axios({
+    method: "post",
+    url: "https://accounts.spotify.com/api/token",
+    headers: {"Authorization: Basic ":process.env.SPOTIFY_ENCODED},
+    body: {
+      grant_type: "client_credentials",
+    },
+  }).then(function(response) {
+    return axios({
+      method: "get",
+      url: "https://accounts.spotify.com/api/v1/search/q=relaxation&type=track",
+      headers: {"Authorization: Bearer ":response.data.access_token},
+    }).then(function(response) {
+      const relaxationMusic = {
+        song: response.data
+      };
+
+      res.render("music", relaxationMusic);
 
     }).catch(function(error) {
-
-      console.error(error);
+      console.log(error);
     });
 
+  });
 });
 
-router.put("/burgers/:id", function(req, res) {
-  db.Burger.update(
-    {
-      eaten: true
+// Pull meditation content from Spotify
+
+router.get("/", function(req, res) {
+
+  axios({
+    method: "post",
+    url: "https://accounts.spotify.com/api/token",
+    headers: {"Authorization: Basic ":process.env.SPOTIFY_ENCODED},
+    body: {
+      grant_type: "client_credentials",
     },
-    {
-      where: {
-        id: req.params.id
-      }
-    }
-  ).then(function() {
+  }).then(function(response) {
+    return axios({
+      method: "get",
+      url: "https://accounts.spotify.com/api/v1/search/q=relaxation&type=track",
+      headers: {"Authorization: Bearer ":response.data.access_token},
+    }).then(function(response) {
+      const meditationMusic = {
+        meditate: response.data
+      };
 
-    res.sendStatus(200);
-  }).catch(function(error) {
+      res.render("music", meditationMusic);
 
-    console.error(error);
-
-  });
-});
-
-router.delete("/burgers/:id", function(req, res) {
-  db.Burger.destroy(
-    {
-      where: {
-        id: req.params.id
-      }
-    }
-  ).then(function() {
-
-    res.sendStatus(200);
-  }).catch(function(error) {
-
-    console.error(error);
+    }).catch(function(error) {
+      console.log(error);
+    });
 
   });
 });
-
 
 // Export module
 
