@@ -3,17 +3,19 @@
         <div class="background">
             {{#each song}}
             <div class="container">
-                <div class="card">
-                    <img src="{{album.images.1.url}}" <div class="card-content">
-                    <p>name: {{name}}</p>
-                    <p>artist: {{album.artists.0.name}}</p>
-                </div>
-                <div class="card-content black-text">
-                    <p>popularity: {{popularity}}</p>
-                </div>
-                <div class="card-action black-text">
-                    <a href="#" class="favorite"><i class="material-icons">favorite_border</i></a>
-                    <a href="{{external_urls.spotify}}" target="_blank"><i class="material-icons">launch</i></a>
+                <div class="col s12 m4">
+                    <div class="card medium">
+                        <img src="{{album.images.1.url}}" <div class="card-content">
+                        <p>name: {{name}}</p>
+                        <p>artist: {{album.artists.0.name}}</p>
+                    </div>
+                    <div class="card-content black-text">
+                        <p>popularity: {{popularity}}</p>
+                    </div>
+                    <div class="card-action black-text">
+                        <a href="#" class="favorite"><i class="material-icons">favorite_border</i></a>
+                        <a href="{{external_urls.spotify}}" target="_blank"><i class="material-icons">launch</i></a>
+                    </div>
                 </div>
             </div>
             {{/each}}
