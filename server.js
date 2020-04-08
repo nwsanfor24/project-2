@@ -7,6 +7,7 @@ const exphbs = require("express-handlebars");
 
 // For Express Routes
 const basehtml = require("./routes/html-routes");
+const favorites = require("./routes/api-favorite-routes");
 const pexels = require("./routes/api-pexels-routes");
 const authRoute = require("./routes/auth");
 const usersRoute = require("./routes/users");
@@ -36,11 +37,9 @@ app.set("view engine", "handlebars");
 app.use("/", basehtml);
 app.use("/art", pexels);
 app.use("/spotify", spotify);
+app.use("/api", favorites);
 
-
-//app.use("/api", apiroutes);
-
-db.sequelize.sync().then(function() {
+db.sequelize.sync({}).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
