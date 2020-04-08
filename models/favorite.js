@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  const Image = sequelize.define("Image", {
+  const Favorite = sequelize.define("Favorite", {
     src: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -7,7 +7,14 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
-    url: {
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    text: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -16,13 +23,13 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Image.associate = function(models) {
-    Image.belongsTo(models.User, {
+  Favorite.associate = function(models) {
+    Favorite.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
       }
     });
   };
 
-  return Image;
+  return Favorite;
 };
