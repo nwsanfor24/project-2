@@ -10,8 +10,7 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   User.associate = function(models) {
-    User.hasMany(models.Song);
-    User.hasMany(models.Image);
+    User.hasMany(models.Favorite);
   };
 
   return User;

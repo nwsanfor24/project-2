@@ -21,7 +21,25 @@ router.get("/", function(req, res) {
 
 router.get("/home", function(req, res) {
   res.render("index", { title: "Give Me A Break!" });
-});
+
+// UNCOMMENT THIS ONCE WE HAVE THE USERID & CARDS ON THE HOME PAGE
+
+//   db.Favorites.findAll({
+//     where: {
+//       UserId: 1
+//     },
+//     raw: true,
+//     order: [["updatedAt", "DESC"]]
+//   }).then(function(data) {
+
+//     const favorites = {
+//       favorite: data
+//     };
+
+//     res.render("index", favorites);
+
+//   });
+// });
 
 router.get("/music", function(req, res) {
   res.render("music", { title: "Music to soothe your soul"});
