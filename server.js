@@ -36,6 +36,8 @@ app.set("view engine", "handlebars");
 // ---------------------------------------------------------------------------
 app.use("/", basehtml);
 app.use("/art", pexels);
+app.use("/music", spotify);
+//app.use("/meditation", spotify);
 app.use("/spotify", spotify);
 app.use("/api", favorites);
 
