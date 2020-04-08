@@ -56,7 +56,7 @@ var session = require("express-session");
 
 // config express-session
 var sess = {
-  secret: "5iRrBgXtRckfnncIDxBPfYrXPnfxMJ_Pgv2IgZhoM0gNOG3bTShNPck-SFFPMzgx",
+  secret: AUTH0_CLIENT_SECRET,
   cookie: {},
   resave: false,
   saveUninitialized: true
