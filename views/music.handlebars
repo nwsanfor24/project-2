@@ -1,41 +1,27 @@
 <main>
     <div class="row">
         <div class="background">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
             <div class="container">
-                <div class="col s12 m4 l3">
-                    <h2 class="white-text">This is Content</h2>
-                    <h3 class="white-text">More content</h3>
-                    <h4 class="white-text">Even more content</h4>
-                </div>
-                <div class="col s12 m8 l9">
-                    <div class="card large transparent">
-                        <div class="card-content white-text">
-                            <p>This is the content on the card</p>
-                            <p>This is more content on the card</p>
-                            <p>I'm thinking this content will populate once something is clicked?</p>
+                {{#each song}}
+                <div class="container">
+                    <div class="">
+                        <div class="card large">
+                            <img src="{{album.images.1.url}}"
+                            <div class="card-content">
+                                <p>name: {{name}}</p>
+                                <p>artist: {{album.artists.0.name}}</p>
+                            </div>
+                            <div class="card-content black-text">
+                                <p>popularity: {{popularity}}</p>
+                            </div>
+                            <div class="card-action black-text">
+                                <a href="#" class="favorite"><i class="material-icons">favorite_border</i></a>
+                                <a href="{{external_urls.spotify}}" target="_blank"><i class="material-icons">launch</i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
+                {{/each}}
             </div>
         </div>
     </div>
