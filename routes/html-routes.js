@@ -23,9 +23,9 @@ router.get("/home", function(req, res) {
   res.render("index", { title: "Give Me A Break!" });
 });
 
-router.get("/music", function(req, res) {
-  res.render("music", { title: "Music to soothe your soul"});
-});
+// router.get("/music", function(req, res) {
+//   res.render("music", { title: "Music to soothe your soul"});
+// });
 
 router.get("/meditation", function(req, res) {
   res.render("meditation", { title: "Meditate" });
