@@ -4,8 +4,6 @@ $( document ).ready(function() {
   // ---------------------------------------------------------------------------
   // ---------------------------------------------------------------------------
 
-  const testuser = "faithful3192@gmail.com";
-
   // Favorite Item
   // ---------------------------------------------------------------------------
   // ---------------------------------------------------------------------------
@@ -14,17 +12,12 @@ $( document ).ready(function() {
 
     event.preventDefault();
 
-    if (!testuser) {
-      return M.toast({html: "You must sign in to save favorites!"});
-    }
-
     const $this = $(this);
 
     const favorite = {
       src: $this.attr("data-url"),
       image: $this.attr("data-img"),
       text: $this.attr("data-text"),
-      userid: testuser
     };
 
     $.post("/api/favorite", favorite)
@@ -49,10 +42,6 @@ $( document ).ready(function() {
 
     event.preventDefault();
 
-    if (!testuser) {
-      return M.toast({html: "You must sign in to save favorites!"});
-    }
-
     const $this = $(this);
     const delId = $this.attr("data-id");
 
@@ -63,8 +52,9 @@ $( document ).ready(function() {
       $this.children(".material-icons").text("favorite_border");
       $this.removeClass("unfavorite").addClass("favorite");
       M.toast({html: "Removed from Favorites"});
+    }).catch(function() {
+      M.toast({html: "Something Went Wrong..."});
     });
-
   });
 
 });
