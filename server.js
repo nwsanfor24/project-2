@@ -37,9 +37,15 @@ app.set("view engine", "handlebars");
 // ---------------------------------------------------------------------------
 app.use("/", basehtml);
 app.use("/art", pexels);
+
 app.use("/music", music);
 app.use("/meditation", meditation);
 app.use("/api", favorites);
+
+app.use("/music", spotify);
+//app.use("/meditation", spotify);
+app.use("/spotify", spotify);
+
 
 db.sequelize.sync({}).then(function() {
   app.listen(PORT, function() {
@@ -56,7 +62,7 @@ var session = require("express-session");
 
 // config express-session
 var sess = {
-  secret: "5iRrBgXtRckfnncIDxBPfYrXPnfxMJ_Pgv2IgZhoM0gNOG3bTShNPck-SFFPMzgx",
+  secret: process.env.AUTH0_CLIENT_SECRET,
   cookie: {},
   resave: false,
   saveUninitialized: true
@@ -67,9 +73,9 @@ if (app.get("env") === "production") {
   sess.cookie.secure = true;
 
   // Uncomment the line below if your application is behind a proxy (like on Heroku)
-  // or if you're encountering the error message:
+  // or if you"re encountering the error message:
   // "Unable to verify authorization request state"
-  // app.set('trust proxy', 1);
+  // app.set("trust proxy", 1);
 }
 
 app.use(session(sess));
@@ -110,13 +116,14 @@ app.use(passport.session());
 //Including the routers and userInViews middleware
 //---------------------------------------------------------------------------
 
-var userInViews = require('./lib/middleware/userInViews');
-var authRouter = require('./routes/auth');
-var usersRouter = require('./routes/users');
+var userInViews = require("./lib/middleware/userInViews");
+var authRouter = require("./routes/auth");
+var usersRouter = require("./routes/users");
 
 app.use(userInViews());
-app.use('/', authRouter);
-app.use('/', usersRouter);
+app.use("/", authRouter);
+app.use("/", usersRouter);
+app.use("/api", favorites);
 
 
 //Storing and retrieving user data from the session

@@ -3,6 +3,7 @@
 // ---------------------------------------------------------------------------
 
 const express = require("express");
+const secured = require("../lib/middleware/secured");
 const router = express.Router();
 
 // Getting sequelize for database
@@ -11,13 +12,11 @@ const db = require("../models");
 // Routes
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
-
-// Create new favorite
-router.post("/favorite", function(req, res) {
+router.post("/favorite", secured(), function (req, res, next) {
 
   db.User.findOne({
     where: {
-      userid: req.body.userid
+      userid: req.user._json.email
     },
     raw: true
   }).then((foundUser) => {
@@ -36,29 +35,31 @@ router.post("/favorite", function(req, res) {
         res.status(403);
       });
   });
-
 });
 
 // Remove favorite
-router.delete("/favorite/:id", function(req, res) {
+router.delete("/favorite/:id", secured(), function(req, res) {
 
-  db.Favorite.destroy(
-    {
-      where: {
-        id: req.params.id
+  db.User.findOne({
+    where: {
+      userid: req.user._json.email
+    },
+    raw: true
+  }).then((foundUser) => {
+    db.Favorite.destroy(
+      {
+        where: {
+          id: req.params.id,
+          UserId: foundUser.id
+        }
       }
-    }
-  ).then(function() {
-
-    res.sendStatus(200);
-
-  }).catch(function(error) {
-
-    console.error(error);
-    res.status(403);
-
+    ).then(function() {
+      res.sendStatus(200);
+    }).catch(function(error) {
+      console.error(error);
+      res.status(403);
+    });
   });
-
 });
 
 module.exports = router;

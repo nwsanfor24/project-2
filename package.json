@@ -1,7 +1,7 @@
 {
-  "name": "hamburger-builder",
+  "name": "Give-Me-A-Break",
   "version": "1.0.0",
-  "description": "A single page application using mySQL, Node.js, and more...",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jenniferkirwin/hamburger-builder.git"
+    "url": "git+https://github.com/nwsanfor24/project-2.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jenniferkirwin/hamburger-builder/issues"
+    "url": "https://github.com/nwsanfor24/project-2"
   },
-  "homepage": "https://github.com/jenniferkirwin/hamburger-builder#readme",
+  "homepage": "https://github.com/nwsanfor24/project-2#readme",
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.6.5",
     "axios": "^0.19.2",
