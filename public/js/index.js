@@ -13,7 +13,7 @@ $(document).ready(function () {
   });
 
   //Btn on Music page back to Home Page
-  $(document.on("click", ".homeMusic", function(event) {
+  $(document.on("click", ".homeMeditation", function(event) {
     event.preventDefault();
 
     $(location).attr('href', '/home');
