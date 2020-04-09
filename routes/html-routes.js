@@ -45,8 +45,4 @@ router.get("/home", function(req, res) {
 //   res.render("music", { title: "Music to soothe your soul"});
 // });
 
-router.get("/meditation", function(req, res) {
-  res.render("meditation", { title: "Meditate" });
-});
-
 module.exports = router;
