@@ -1,6 +1,9 @@
 <main>
     <div class="row">
         <div class="background">
+            <a href="/home" class="waves-effect waves-light white-text homeMusic btn">Home<i
+                    class="material-icons left">cloud</i></a>
+
             {{#each song}}
             <div class="container">
                 <div class="col s12 m4">
@@ -13,7 +16,10 @@
                         <p>popularity: {{popularity}}</p>
                     </div>
                     <div class="card-action black-text">
-                        <a href="#" class="favorite" data-img="{{album.images.1.url}}" data-url="{{external_urls.spotify}}" data-text="name: {{name}} | artist: {{album.artists.0.name}}"><i class="material-icons">favorite_border</i></a>
+                        <a href="#" class="favorite" data-img="{{album.images.1.url}}"
+                            data-url="{{external_urls.spotify}}"
+                            data-text="name: {{name}} | artist: {{album.artists.0.name}}"><i
+                                class="material-icons">favorite_border</i></a>
                         <a href="{{external_urls.spotify}}" target="_blank"><i class="material-icons">launch</i></a>
                     </div>
                 </div>
