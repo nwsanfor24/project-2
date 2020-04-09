@@ -3,13 +3,11 @@
 // ---------------------------------------------------------------------------
 
 const express = require("express");
+const secured = require("../lib/middleware/secured");
 const router = express.Router();
 
 // Getting sequelize for database
 const db = require("../models");
-
-//Require secured
-const secured = require("../lib/middleware/secured.js");
 
 // Routes
 // ---------------------------------------------------------------------------
@@ -19,30 +17,38 @@ router.get("/", function(req, res) {
   res.render("start", { title: "Give Me A Break!" });
 });
 
-router.get("/home", function(req, res) {
-  res.render("index", { title: "Give Me A Break!" });
+router.get("/home", secured(), function(req, res) {
 
-  // UNCOMMENT THIS ONCE WE HAVE THE USERID & CARDS ON THE HOME PAGE
+  db.User.findOne({
+    where: {
+      userid: req.user._json.email
+    },
+    raw: true,
+    order: [["updatedAt", "DESC"]]
+  }).then(function(data) {
 
-  //   db.Favorites.findAll({
-  //     where: {
-  //       UserId: 1
-  //     },
-  //     raw: true,
-  //     order: [["updatedAt", "DESC"]]
-  //   }).then(function(data) {
+    db.Favorite.findAll({
+      where: {
+        UserId: data.id
+      },
+      raw: true,
+      order: [["updatedAt", "DESC"]]
+    }).then((favData) => {
 
-  //     const favorites = {
-  //       favorite: data
-  //     };
+      const favorites = {
+        favorite: favData
+      };
+      console.log(favorites);
+      res.render("index", favorites);
 
-  //     res.render("index", favorites);
+    }).catch(function(error) {
+      console.error(error);
+      res.status(403);
+    });
 
-  //   });
+  });
+
 });
 
-// router.get("/music", function(req, res) {
-//   res.render("music", { title: "Music to soothe your soul"});
-// });
-
 module.exports = router;
+

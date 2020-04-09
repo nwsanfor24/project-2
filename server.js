@@ -35,7 +35,6 @@ app.set("view engine", "handlebars");
 
 // Routes
 // ---------------------------------------------------------------------------
-app.use("/", basehtml);
 app.use("/art", pexels);
 app.use("/music", music);
 app.use("/meditation", meditation);
@@ -69,7 +68,7 @@ if (app.get("env") === "production") {
   // Uncomment the line below if your application is behind a proxy (like on Heroku)
   // or if you"re encountering the error message:
   // "Unable to verify authorization request state"
-  // app.set("trust proxy", 1);
+  app.set("trust proxy", 1);
 }
 
 app.use(session(sess));
@@ -117,6 +116,7 @@ var usersRouter = require("./routes/users");
 app.use(userInViews());
 app.use("/", authRouter);
 app.use("/", usersRouter);
+app.use("/", basehtml);
 app.use("/api", favorites);
 
 
