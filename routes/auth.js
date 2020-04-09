@@ -44,15 +44,13 @@ router.get("/callback", function (req, res, next) {
         if(!foundUser) {
           db.User.create({
             userid: req.user._json.email
+          }).then(() => {
+            res.redirect("/home");
           });
+        } else {
+          res.redirect("/home");
         }
-
-        res.redirect("/home");
-
       });
-
-      res.redirect("/home");
-
     });
   })(req, res, next);
 });
