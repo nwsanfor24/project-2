@@ -39,7 +39,6 @@ app.use("/art", pexels);
 app.use("/music", spotify);
 //app.use("/meditation", spotify);
 app.use("/spotify", spotify);
-app.use("/api", favorites);
 
 db.sequelize.sync({}).then(function() {
   app.listen(PORT, function() {
@@ -117,6 +116,7 @@ var usersRouter = require("./routes/users");
 app.use(userInViews());
 app.use("/", authRouter);
 app.use("/", usersRouter);
+app.use("/api", favorites);
 
 
 //Storing and retrieving user data from the session
