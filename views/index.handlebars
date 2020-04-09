@@ -50,13 +50,6 @@
         <li></li>
         <li></li>
         <li></li>
-        <div class="row">
-          <div class="container" id="middle">
-            <div class="card large transparent">
-              <p class="white-text">This is some filler text to see if this worked</p>
-            </div>
-          </div>
-        </div>
         <li></li>
         <li></li>
         <li></li>
@@ -64,6 +57,29 @@
         <li></li>
         <li></li>
       </ul>
+      <div class="row" id="favs">
+
+        {{#each favorite}}
+
+        <div class="col s12 m4">
+          <div class="card small">
+            <div class="card-image">
+              <img src="{{image}}">
+            </div>
+            <div class="card-content white-text">
+              <p>{{text}}</p>
+            </div>
+            <div class="card-action white-text">
+              <a href="#" class="unfavorite" data-img="{{image}}" data-url="{{src}}" data-text="{{text}}"
+                data-id="{{id}}"><i class="material-icons">favorite</i></a>
+              <a href="{{url}}" target="_blank"><i class="material-icons">launch</i></a>
+            </div>
+          </div>
+        </div>
+
+        {{/each}}
+
+      </div>
     </div>
   </div>
 
@@ -96,6 +112,7 @@
               </div>
           </div>
       </div>
+    </div>
 
     {{/each}}
 

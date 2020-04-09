@@ -80,10 +80,10 @@ footer, .page-footer {
   margin-bottom: -30px;
 }
 
-#middle {
-  display: flex;
+#favs {
+  position: relative;
   justify-content: center;
-  align-items: center;
+  justify-items: center;
 }
 
 .card {

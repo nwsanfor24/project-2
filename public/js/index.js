@@ -12,6 +12,13 @@ $(document).ready(function () {
 
   });
 
+  //Btn on Music page back to Home Page
+  $(document.on("click", ".homeMusic", function(event) {
+    event.preventDefault();
+
+    $(location).attr('href', '/home');
+  }));
+
   //Homepage btn click to Meditation
   $(document).on("click", ".meditation", function(event) {
     event.preventDefault();
@@ -20,11 +27,25 @@ $(document).ready(function () {
 
   });
 
+  //Btn on Meditation page back to Home Page
+  $(document).on("click", ".homeMeditation", function(event) {
+    event.preventDefault();
+
+    $(location).attr('href', '/home');
+  });
+
   //Homepage btn click to Art
   $(document).on("click", ".art", function(event) {
     event.preventDefault();
 
     $(location).attr('href', '/art');
+  });
+
+  //Btn on Art page back to Home Page
+  $(document).on("click", ".homeArt", function(event) {
+    event.preventDefault();
+
+    $(location).attr('href', '/home');
   });
 
   // Favorite Item
