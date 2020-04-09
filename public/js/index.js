@@ -8,22 +8,22 @@ $(document).ready(function () {
   $(document).on("click", ".music", function (event) {
     event.preventDefault();
 
-    $(location).attr('href', '/music');
+    $(location).attr("href", "/music");
 
   });
 
   //Btn on Music page back to Home Page
-  $(document.on("click", ".homeMeditation", function(event) {
+  $(document).on("click", ".homeMeditation", function(event) {
     event.preventDefault();
 
-    $(location).attr('href', '/home');
-  }));
+    $(location).attr("href", "/home");
+  });
 
   //Homepage btn click to Meditation
   $(document).on("click", ".meditation", function(event) {
     event.preventDefault();
 
-    $(location).attr('href', '/meditation');
+    $(location).attr("href", "/meditation");
 
   });
 
@@ -31,21 +31,21 @@ $(document).ready(function () {
   $(document).on("click", ".homeMeditation", function(event) {
     event.preventDefault();
 
-    $(location).attr('href', '/home');
+    $(location).attr("href", "/home");
   });
 
   //Homepage btn click to Art
   $(document).on("click", ".art", function(event) {
     event.preventDefault();
 
-    $(location).attr('href', '/art');
+    $(location).attr("href", "/art");
   });
 
   //Btn on Art page back to Home Page
   $(document).on("click", ".homeArt", function(event) {
     event.preventDefault();
 
-    $(location).attr('href', '/home');
+    $(location).attr("href", "/home");
   });
 
   // Favorite Item
