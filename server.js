@@ -12,7 +12,7 @@ const pexels = require("./routes/api-pexels-routes");
 const authRoute = require("./routes/auth");
 const usersRoute = require("./routes/users");
 const music = require("./routes/api-music-routes");
-const meditation = require("./route/api-meditation-routes");
+const meditation = require("./routes/api-meditation-routes");
 
 
 // Express App
@@ -39,8 +39,6 @@ app.use("/", basehtml);
 app.use("/art", pexels);
 app.use("/music", music);
 app.use("/meditation", meditation);
-//app.use("/meditation", spotify);
-app.use("/spotify", spotify);
 app.use("/api", favorites);
 
 db.sequelize.sync({}).then(function() {
