@@ -4,6 +4,22 @@
     <div id="birds">
     </div>
   </div>
+
+  <div class="area">
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+
   <div class="row">
     <div class="col s12 m4">
       <div class="card light-blue lighten-1">
@@ -44,48 +60,37 @@
         </div>
       </div>
     </div>
-    <div class="area">
-      <ul class="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-      <div class="row" id="favs">
+  </div>
+  <div class="row" id="favs">
+    <div class="col s12">
+      <h2 class="white-text center">Favorites</h2>
+    </div>
+    {{#each favorite}}
 
-        {{#each favorite}}
-
-        <div class="col s12 m4">
-          <div class="card small">
-            <div class="card-image">
-              <img src="{{image}}">
-            </div>
-            <div class="card-content white-text">
-              <p>{{text}}</p>
-            </div>
-            <div class="card-action white-text">
-              <a href="#" class="unfavorite" data-img="{{image}}" data-url="{{src}}" data-text="{{text}}"
-                data-id="{{id}}"><i class="material-icons">favorite</i></a>
-              <a href="{{url}}" target="_blank"><i class="material-icons">launch</i></a>
-            </div>
-          </div>
+    <div class="col s12 m4">
+      <div class="card small">
+        <div class="card-image">
+          <img src="{{image}}">
         </div>
-
-        {{/each}}
-
+        <div class="card-content black-text">
+          <p>{{text}}</p>
+        </div>
+        <div class="card-action black-text">
+          <a href="#" class="unfavorite" data-img="{{image}}" data-url="{{src}}" data-text="{{text}}"
+            data-id="{{id}}"><i class="material-icons">favorite</i></a>
+          <a href="{{url}}" target="_blank"><i class="material-icons">launch</i></a>
+        </div>
       </div>
     </div>
+
+    {{/each}}
+
   </div>
 
   <footer class="page-footer" style="text-align: center">
     <a class="logout" href='/logout' style="color:#FFFFFF; padding: 2px;">Logout</a>
   </footer>
+
   <!-- RENDER FAVORITES -->
   <!-- ///////////////////////////////////////////////////////////////////////// -->
   {{!-- <div class="row">
