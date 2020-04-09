@@ -8,6 +8,8 @@ var util = require("util");
 var url = require("url");
 var querystring = require("querystring");
 
+const db = require("../models");
+
 dotenv.config();
 
 // Perform the login, after login Auth0 will redirect to callback
@@ -32,6 +34,22 @@ router.get("/callback", function (req, res, next) {
       }
       // const returnTo = req.session.returnTo;
       // delete req.session.returnTo;
+
+      db.User.findOne({
+        where: {
+          userid: req.user._json.email
+        },
+        raw: true
+      }).then((foundUser) => {
+        if(!foundUser) {
+          db.User.create({
+            userid: foundUser.id
+          });
+        }
+
+        res.redirect("/home");
+
+      });
 
       res.redirect("/home");
 
