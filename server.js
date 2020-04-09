@@ -40,10 +40,6 @@ app.use("/art", pexels);
 app.use("/music", music);
 app.use("/meditation", meditation);
 
-app.use("/music", spotify);
-//app.use("/meditation", spotify);
-app.use("/spotify", spotify);
-
 
 db.sequelize.sync({}).then(function() {
   app.listen(PORT, function() {
