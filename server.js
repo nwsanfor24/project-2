@@ -11,7 +11,8 @@ const favorites = require("./routes/api-favorite-routes");
 const pexels = require("./routes/api-pexels-routes");
 const authRoute = require("./routes/auth");
 const usersRoute = require("./routes/users");
-const spotify = require("./routes/api-spotify-routes");
+const music = require("./routes/api-music-routes");
+const meditation = require("./routes/api-meditation-routes");
 
 
 // Express App
@@ -36,9 +37,15 @@ app.set("view engine", "handlebars");
 // ---------------------------------------------------------------------------
 app.use("/", basehtml);
 app.use("/art", pexels);
+
+app.use("/music", music);
+app.use("/meditation", meditation);
+app.use("/api", favorites);
+
 app.use("/music", spotify);
 //app.use("/meditation", spotify);
 app.use("/spotify", spotify);
+
 
 db.sequelize.sync({}).then(function() {
   app.listen(PORT, function() {
