@@ -43,7 +43,7 @@ router.get("/callback", function (req, res, next) {
       }).then((foundUser) => {
         if(!foundUser) {
           db.User.create({
-            userid: foundUser.id
+            userid: req.user._json.email
           });
         }
 
