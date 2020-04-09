@@ -35,7 +35,6 @@ app.set("view engine", "handlebars");
 
 // Routes
 // ---------------------------------------------------------------------------
-app.use("/", basehtml);
 app.use("/art", pexels);
 app.use("/music", music);
 app.use("/meditation", meditation);
@@ -117,6 +116,7 @@ var usersRouter = require("./routes/users");
 app.use(userInViews());
 app.use("/", authRouter);
 app.use("/", usersRouter);
+app.use("/", basehtml);
 app.use("/api", favorites);
 
 
