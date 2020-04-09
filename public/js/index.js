@@ -1,14 +1,37 @@
-$( document ).ready(function() {
+$(document).ready(function () {
 
   // Constants
   // ---------------------------------------------------------------------------
   // ---------------------------------------------------------------------------
 
+  //Homepage btn click to Music
+  $(document).on("click", ".music", function (event) {
+    event.preventDefault();
+
+    $(location).attr('href', '/music');
+
+  });
+
+  //Homepage btn click to Meditation
+  $(document).on("click", ".meditation", function(event) {
+    event.preventDefault();
+
+    $(location).attr('href', '/meditation');
+
+  });
+
+  //Homepage btn click to Art
+  $(document).on("click", ".art", function(event) {
+    event.preventDefault();
+
+    $(location).attr('href', '/art');
+  });
+
   // Favorite Item
   // ---------------------------------------------------------------------------
   // ---------------------------------------------------------------------------
 
-  $(document).on("click", ".favorite", function(event) {
+  $(document).on("click", ".favorite", function (event) {
 
     event.preventDefault();
 
@@ -21,15 +44,15 @@ $( document ).ready(function() {
     };
 
     $.post("/api/favorite", favorite)
-      .then(function(data) {
+      .then(function (data) {
         console.log(data);
         $this.attr("data-id", data.id);
         $this.children(".material-icons").text("favorite");
         $this.removeClass("favorite").addClass("unfavorite");
-        M.toast({html: "Favorite Saved!"});
+        M.toast({ html: "Favorite Saved!" });
       })
-      .catch(function() {
-        M.toast({html: "Something Went Wrong..."});
+      .catch(function () {
+        M.toast({ html: "Something Went Wrong..." });
       });
 
   });
@@ -38,7 +61,7 @@ $( document ).ready(function() {
   // ---------------------------------------------------------------------------
   // ---------------------------------------------------------------------------
 
-  $(document).on("click", ".unfavorite", function(event) {
+  $(document).on("click", ".unfavorite", function (event) {
 
     event.preventDefault();
 
@@ -48,12 +71,12 @@ $( document ).ready(function() {
     $.ajax({
       method: "DELETE",
       url: `/api/favorite/${delId}`
-    }).then(function() {
+    }).then(function () {
       $this.children(".material-icons").text("favorite_border");
       $this.removeClass("unfavorite").addClass("favorite");
-      M.toast({html: "Removed from Favorites"});
-    }).catch(function() {
-      M.toast({html: "Something Went Wrong..."});
+      M.toast({ html: "Removed from Favorites" });
+    }).catch(function () {
+      M.toast({ html: "Something Went Wrong..." });
     });
   });
 
