@@ -28,12 +28,12 @@ router.get("/", function(req, res) {
   }).then(function(response) {
     return axios({
       method: "get",
-      url: "https://api.spotify.com/v1/search?q=relaxation&type=track&limit=12",
+      url: "https://api.spotify.com/v1/recommendations?seed_genres=classical&type=track&limit=12",
       headers: {"Authorization": `Bearer ${response.data.access_token}`},
     }).then(function(response) {
       console.log(response);
       const relaxationMusic = {
-        song: response.data.tracks.items
+        song: response.data.tracks
       };
 
       res.render("music", relaxationMusic);
